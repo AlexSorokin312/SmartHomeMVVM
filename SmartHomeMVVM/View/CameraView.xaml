@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="SmartHomeMVVM.View.CameraView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel>
+            <Button  Content="Включить камеру"
+                     Command="{Binding TurnCameraOnCommand}"
+                     Margin="5"
+                     Height="30"/>
+            <Button  Content="Выключить камеру"
+                     Command="{Binding TurnCameraOffCommand}"
+                     Margin="5"
+                     Height="30"/>
+            <Button  Content="Включить датчик движения"
+                     Command="{Binding TurnOnMovementSensorCommand}"
+                     Margin="5"
+                     Height="30"/>
+            <Button  Content="Выключить датчик движения"
+                     Command="{Binding TurnOffMovementSensorCommand}"
+                     Margin="5"
+                     Height="30"
+                     />
+        </StackPanel>
+        <StackPanel Grid.Column="1">
+            <TextBlock Text="{Binding Camera.Name}"/>
+            <TextBlock Text="{Binding Camera.cameraState}"/>
+            <TextBlock Text="{Binding Camera.movementSensorState}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
